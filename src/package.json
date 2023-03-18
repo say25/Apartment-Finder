@@ -1,0 +1,14 @@
+{
+    "name": "apartment-finder",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.mjs",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "SYEH",
+    "dependencies": {
+      "@aws-sdk/client-cloudwatch": "^3.294.0"
+    }
+  }
+  
