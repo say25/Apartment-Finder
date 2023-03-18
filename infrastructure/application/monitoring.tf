@@ -1,12 +1,15 @@
+# https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation
+
+# Verify the lambda is consistently erroring in the last 30 minutes
 resource "aws_cloudwatch_metric_alarm" "function_failure" {
   alarm_name                = "${var.application_name}-execution-failures"
   statistic                 = "Sum"
   metric_name               = "Errors"
   comparison_operator       = "GreaterThanThreshold"
-  threshold                 = "0"
-  period                    = "720" # two hours
-  evaluation_periods        = "5"
-  datapoints_to_alarm       = "2"
+  threshold                 = "1"
+  period                    = "600" # ten minutes
+  evaluation_periods        = "3"
+  datapoints_to_alarm       = "3" # after three consectutive failures within three periods, alarm
   namespace                 = "AWS/Lambda"
   treat_missing_data        = "notBreaching"
   alarm_description         = "${var.application_name} run failed."
@@ -19,15 +22,16 @@ resource "aws_cloudwatch_metric_alarm" "function_failure" {
   }
 }
 
+# Verify the lambda is being invoked at least once in the last 30 minutes
 resource "aws_cloudwatch_metric_alarm" "function_failed_to_invoke" {
   alarm_name                = "${var.application_name}-invocations-failures"
   statistic                 = "Sum"
   metric_name               = "Invocations"
   comparison_operator       = "LessThanThreshold"
   threshold                 = "1"
-  period                    = "720" # two hours
-  evaluation_periods        = "5"
-  datapoints_to_alarm       = "2"
+  period                    = "600" # ten minutes
+  evaluation_periods        = "3"
+  datapoints_to_alarm       = "3" # after three consectutive failures within three periods, alarm
   namespace                 = "AWS/Lambda"
   treat_missing_data        = "breaching"
   alarm_description         = "${var.application_name} failed to be invoked."
