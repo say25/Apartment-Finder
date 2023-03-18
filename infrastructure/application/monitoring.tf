@@ -5,7 +5,7 @@ resource "aws_cloudwatch_metric_alarm" "function_failure" {
   alarm_name                = "${var.application_name}-execution-failures"
   statistic                 = "Sum"
   metric_name               = "Errors"
-  comparison_operator       = "GreaterThanThreshold"
+  comparison_operator       = "GreaterThanOrEqualToThreshold"
   threshold                 = "1"
   period                    = "600" # ten minutes
   evaluation_periods        = "3"
