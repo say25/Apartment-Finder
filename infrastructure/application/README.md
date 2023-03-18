@@ -2,7 +2,7 @@
 
 This folder has all the Terraform to deploy this application.
 
-The terraform is run manually by developers locally.
+Terraform is run manually by developers locally.
 
 ## Commands
 
