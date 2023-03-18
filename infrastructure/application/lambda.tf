@@ -10,7 +10,9 @@ resource "aws_lambda_function" "lambda" {
 
   environment {
     variables = {
-      ENVIRONMENT = "Production"
+      ENVIRONMENT  = "Production"
+      COMPLEX_URL  = "CHANGE ME"
+      COMPLEX_NAME = "CHANGE ME"
     }
   }
 
