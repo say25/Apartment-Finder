@@ -5,8 +5,8 @@ An application that polls and API to check for an available apartment matching s
 ## High Level Overview
 
 - Lambda function is invoked by CRON
-    - Daytime (9am-9pm) - Every 5 minutes
-    - Evening (9pm-9am) - Every 15 minutes
+  - Daytime (9am-9pm) - Every 5 minutes
+  - Evening (9pm-9am) - Every 15 minutes
 - Lambda function executes
     1. Queries apartment API
     1. Sends 2 metrics to CloudWatch
@@ -23,3 +23,7 @@ An application that polls and API to check for an available apartment matching s
 ## Infrastructure
 
 This application is Terraformed. If creating from scratch, this application will upload an empty lambda function. The developer will need to upload the code afterwards.
+
+## Documentation
+
+Additional documentation lives in the [docs folder](/docs).
