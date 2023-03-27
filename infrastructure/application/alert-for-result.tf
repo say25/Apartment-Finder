@@ -28,7 +28,7 @@ locals {
 }
 
 resource "aws_sns_topic" "matching_units_topic" {
-  name = "${var.application_name}-cloudwatch-alarms"
+  name = "${var.application_name}-cloudwatch-result-alarms"
 }
 
 resource "aws_sns_topic_subscription" "matching_units_pagerduty" {

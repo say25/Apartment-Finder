@@ -53,7 +53,7 @@ locals {
 }
 
 resource "aws_sns_topic" "monitoring_topic" {
-  name = "${var.application_name}-cloudwatch-alarms"
+  name = "${var.application_name}-cloudwatch-monitoring-alarms"
 }
 
 resource "aws_sns_topic_subscription" "monitoring_pagerduty" {
