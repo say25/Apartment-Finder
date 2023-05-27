@@ -1,6 +1,6 @@
 # Apartment Finder
 
-An application that polls and API to check for an available apartment matching specific criteria.
+An application that polls an API to check for an available apartment matching specific criteria.
 
 ## High Level Overview
 
