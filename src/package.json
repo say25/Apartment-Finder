@@ -8,6 +8,6 @@
   },
   "author": "SYEH",
   "dependencies": {
-    "@aws-sdk/client-cloudwatch": "^3.294.0"
+    "@aws-sdk/client-cloudwatch": "^3.350.0"
   }
 }
