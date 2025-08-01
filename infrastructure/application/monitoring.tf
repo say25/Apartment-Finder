@@ -9,7 +9,7 @@ resource "aws_cloudwatch_metric_alarm" "function_failure" {
   threshold                 = "1"
   period                    = "600" # ten minutes
   evaluation_periods        = "3"
-  datapoints_to_alarm       = "3" # after three consectutive failures within three periods, alarm
+  datapoints_to_alarm       = "3" # after three consecutive failures within three periods, alarm
   namespace                 = "AWS/Lambda"
   treat_missing_data        = "notBreaching"
   alarm_description         = "${var.application_name} run failed."
@@ -31,7 +31,7 @@ resource "aws_cloudwatch_metric_alarm" "function_failed_to_invoke" {
   threshold                 = "1"
   period                    = "600" # ten minutes
   evaluation_periods        = "3"
-  datapoints_to_alarm       = "3" # after three consectutive failures within three periods, alarm
+  datapoints_to_alarm       = "3" # after three consecutive failures within three periods, alarm
   namespace                 = "AWS/Lambda"
   treat_missing_data        = "breaching"
   alarm_description         = "${var.application_name} failed to be invoked."
